@@ -4,7 +4,7 @@ function FASTAeditWithVCF(VCF,FASTA,OUTFASTA)
 % if OUTFASTA exist, the script will expand the file. Delete the previously
 % exising file before running.
 % % Example command line
-% FASTAeditWithVCF('v19.WT_S11.fb.vcf','4287-WT.v19.fasta','new.fasta')
+% FASTAeditWithVCF('Variants.vcf','in.fasta','out.fasta')
 % Dilay Ayhan, 2018
 
 formatSpec = '%s%n%q%s%s%n%q%q%q%q%[^\n]';
@@ -34,6 +34,6 @@ for i=1:length(variants{1,1})
         variants{1,4}(i));
 end
 
-myfastawrite(OUTFASTA,newFA);
+fastawrite(OUTFASTA,newFA);
 
 end
