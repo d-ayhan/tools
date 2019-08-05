@@ -1,7 +1,7 @@
 function assemblystats(FASTA,REF)
 % prints basic stats and plots histograms for a given fasta file (FASTA),
 % and/or prints stats of comparison the assembly to a reference (REF)
-%% example usage:
+% % example usage:
 % assemblystats('/path/to/Genome.fasta')
 % Dilay Ayhan, 2019
 
