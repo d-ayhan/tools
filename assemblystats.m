@@ -1,6 +1,9 @@
 function assemblystats(FASTA,REF)
 % prints basic stats and plots histograms for a given fasta file (FASTA),
 % and/or prints stats of comparison the assembly to a reference (REF)
+%% example usage:
+% assemblystats('/path/to/Genome.fasta')
+% Dilay Ayhan, 2019
 
 if nargin > 1
     ref = fastaread(REF);
@@ -33,6 +36,7 @@ N50=sortedlengts(L50);
 N90=sortedlengts(find(g.*.9 < cumsum(sortedlengts), 1, 'first'));
 smallest=min(len);
 largest=max(len);
+largerThan1000 = sum(len>1000);
 %% esimated genome size from alignments to reference genome. %ignores high coverage regions.
 if ~isempty(ref)
     refgenomeSize=length([ref(:).Sequence])-sum([ref(:).Sequence]=='N'); %nonNs
@@ -73,6 +77,7 @@ end
 display(['Number of contigs & supercontigs = ' num2str(length(len))])
 display(['Size of largest supercontig = ' num2str(largest)])
 display(['Size of smallest contig = ' num2str(smallest)])
+display(['Number of contigs with size larger than 1kb = ' num2str(largerThan1000)])
 display(['N50 = ' num2str(N50)])
 display(['N90 = ' num2str(N90)])
 
