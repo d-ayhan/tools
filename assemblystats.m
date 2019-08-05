@@ -37,7 +37,7 @@ N90=sortedlengts(find(g.*.9 < cumsum(sortedlengts), 1, 'first'));
 smallest=min(len);
 largest=max(len);
 largerThan1000 = sum(len>1000);
-%% esimated genome size from alignments to reference genome. %ignores high coverage regions.
+%% esimated genome size from alignments to reference genome. %ignores high coverage regions
 if ~isempty(ref)
     refgenomeSize=length([ref(:).Sequence])-sum([ref(:).Sequence]=='N'); %nonNs
     half=0.128;
