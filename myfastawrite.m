@@ -1,4 +1,5 @@
 function myfastawrite(filename,header,seq)
+% fastawrite MATLAB function edited.
 %FASTAWRITE writes FASTA format file.
 %
 %   FASTAWRITE(FILENAME, DATA) writes the contents of DATA to file FILENAME
