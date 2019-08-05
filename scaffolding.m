@@ -2,11 +2,15 @@ function scaffolding(FASTA,FAI,BNDvcf,insertSize,OUTFASTA)
 % scaffolding
 % Breakend vcf file should be sorted by coordinates
 
-% FASTA = '26365_pilon.fasta';
-% OUTFASTA = '26365_scaffolding.fasta';
-% BNDvcf = '26365_v3.SV.vcf';
-% FAI = '26365_pilon.fasta.fai';
-% insertSize = 350;
+% FASTA : str, input genome file
+% OUTFASTA : str, output genome file
+% BNDvcf : str, structural variants file in breakEnd format
+% FAI : str, fasta index file
+% insertSize : num, mean sequencing insert size
+% % example usage:
+% scaffolding('/path/to/Genome.fasta', '/path/to/Genome.fasta.fai', '/path/to/StructuralVariants.vcf', 400, /path/to/OutputGenome.fasta')
+% Dilay Ayhan, 2019
+
 BNDpairTag = '(?:PARID|MATEID)';
 ScaffoldName = 'Scaffold_';
 
